@@ -33,3 +33,9 @@ button {
     padding: 6px 12px;
     cursor: pointer;
 }
+
+.cart-item {
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+    line-height: 1.6;
+}
