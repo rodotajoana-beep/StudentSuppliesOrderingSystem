@@ -29,7 +29,12 @@
 
         <section id="payment-section">
             <h2>Payment</h2>
-            <div id="payment"></div>
+            <div id="payment">
+                <label for="amount-paid">Amount Paid (₱):</label><br>
+                <input type="text" id="amount-paid" inputmode="decimal" placeholder="Enter cash amount">
+                <button onclick="confirmPayment()" id="confirm-btn">Confirm Payment</button>
+                <p id="payment-error" class="error"></p>
+            </div>
         </section>
 
         <section id="receipt-section">

@@ -39,3 +39,32 @@ button {
     border-bottom: 1px solid #ddd;
     line-height: 1.6;
 }
+
+input[type="text"] {
+    padding: 6px;
+    margin: 6px 0;
+    width: 160px;
+}
+
+.error {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+.success {
+    color: #27ae60;
+    font-weight: bold;
+}
+
+.receipt-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 10px 0;
+}
+
+.receipt-table th,
+.receipt-table td {
+    border-bottom: 1px solid #ddd;
+    padding: 6px;
+    text-align: left;
+}
