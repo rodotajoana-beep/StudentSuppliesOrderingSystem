@@ -22,6 +22,7 @@ function renderProducts() {
 }
 
 function addToCart(id) {
+    if (transactionComplete) return;
     const product = products.find(function (p) {
         return p.id === id;
     });
@@ -45,6 +46,7 @@ function addToCart(id) {
 }
 
 function increaseQty(id) {
+    if (transactionComplete) return;
     const item = cart.find(function (i) {
         return i.id === id;
     });
@@ -53,6 +55,7 @@ function increaseQty(id) {
 }
 
 function decreaseQty(id) {
+    if (transactionComplete) return;
     const item = cart.find(function (i) {
         return i.id === id;
     });
@@ -66,6 +69,7 @@ function decreaseQty(id) {
 }
 
 function removeItem(id) {
+    if (transactionComplete) return;
     cart = cart.filter(function (i) {
         return i.id !== id;
     });
@@ -155,6 +159,8 @@ function confirmPayment() {
     const change = paid - total;
     showReceipt(paid, total, change);
 
+    transactionComplete = true;
+
     input.disabled = true;
     document.getElementById("confirm-btn").disabled = true;
 }
@@ -194,6 +200,7 @@ function clearReceipt() {
 }
 
 function newTransaction() {
+    transactionComplete = false;
     cart = [];
     const input = document.getElementById("amount-paid");
     input.value = "";
@@ -205,6 +212,7 @@ function newTransaction() {
 }
 
 let cart = [];
+let transactionComplete = false;
 renderProducts();
 renderCart();
 clearReceipt();
